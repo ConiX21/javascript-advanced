@@ -72,4 +72,16 @@ var personne1 = {
     role: "philosophe"
 };
 
-saluer.call(personne1); // Sénèque est un philosophe.
+saluer.call(personne1); 
+
+// Creation de la fonction each
+Array.prototype.myEach = function(callback) {
+    for (var i = 0; i < this.length; i++)
+        callback(this[i], i, this);
+};
+
+//tests
+var arr = ['biggy smalls', 'bif tannin', 'boo radley', 'hans gruber'];
+arr.myEach(function(word) {
+    console.log(word);
+});
